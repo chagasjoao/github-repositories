@@ -58,6 +58,10 @@ export const RepositoryInfo = styled.section`
 
     li {
       & + li {
+        @media (max-width: 500px) {
+          margin-left: 30px;
+        }
+
         margin-left: 80px;
       }
 

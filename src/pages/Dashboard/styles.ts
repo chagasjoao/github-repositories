@@ -18,10 +18,17 @@ export const Title = styled.h1`
 export const Form = styled.form<FormProps>`
   margin-top: 40px;
   max-width: 700px;
-
   display: flex;
 
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
+
   input {
+    @media (max-width: 500px) {
+      flex: none;
+    }
+
     flex: 1;
     height: 70px;
     padding: 0 24px;
@@ -34,7 +41,13 @@ export const Form = styled.form<FormProps>`
     props.hasError &&
     css`
         border-color: #c53030;
-        border-right: 0;
+
+        @media (max-width: 500px) {
+          border-bottom: 0px;
+          border-right: 2px solid #c53030;
+        }
+
+        border-right: 0px;
       `}
 
     &:placeholder {
@@ -43,6 +56,10 @@ export const Form = styled.form<FormProps>`
   }
 
   button {
+    @media (max-width: 500px) {
+      width: 100%;
+    }
+
     width: 210px;
     height: 70px;
     background: #04d361;
